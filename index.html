@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Xtremeflying</title>
+	<link href="TemplateData/styleStart.css" rel="stylesheet">
+	 	<style type="text/css">
+
+		body,html{
+			padding:0 !important;
+			margin:0;
+			width:100%;
+			height:100%;
+			margin:0!important;
+			position:relative!important;
+			/**overflow:hidden;**/
+
+		}
+
+        #unity-container{
+		}		
+			
+		#game_banner{
+			width: 100%;
+			justify-content: center;
+			display: flex;
+			position: fixed;
+			left:0;
+			bottom:0;
+			z-index:999;
+			height: 50px;
+		
+		}
+		
+		#loadingAD2{
+			width: 100%;
+			justify-content: center;
+			display: flex;
+			position: relative;
+		}
+		#app{
+			display:inline-block;
+			width:100%;
+			height:150%;
+			position:absolute;
+			left:0;
+			top:0 !important;
+			margin:0 !important;
+		}
+		#unity-container.unity-desktop{
+			width:100%;
+			height:100%;
+			display:block
+			padding:-10;
+		}
+		.canvasClass{
+			width:100%;
+			height: calc(100% - 50px);
+		}
+		
+		 /**广告未填充就不显示**/
+		ins.adsbygoogle[data-ad-status="unfilled"] {
+			display: none !important;
+		}
+
+	</style>
+	<!-- 正式模式 -->
+	<script data-ad-frequency-hint="20s" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8504590301958799"
+     crossorigin="anonymous"></script>
+	<script>
+		window.adsbygoogle = window.adsbygoogle || [];
+		var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+		
+		MyUnityInstance = null;
+	</script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JWTM9TR');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JWTM9TR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="app">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=640 height=1137  class="canvasClass"></canvas>
+	</div>
+	<div id="loaderContainer">
+    <div class="game-img">
+        <div class="img-box">
+            <img src="TemplateData/Icon5.png"/>
+            <p>Xtremeflying</p>
+        </div>
+    </div>
+    <div class="game-Play">
+		<div class="game-Play2" id="loading-bar"></div>
+		<div class="game-Play3" id="loadingText">0%</div>
+	</div>
+	
+  <div id="loadingAD">
+  <ins  id="loadingAD2" class="adsbygoogle"
+     style="display:inline-block;width:100%;height:250px"
+     data-ad-client="ca-pub-8504590301958799"
+     data-ad-slot="6580494173"></ins>
+	 <script>
+		function LoadAd()
+		{	
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		}
+		
+		function DelayLoadAd()
+		{
+			if(window.adsbygoogle == undefined)
+			{
+				setTimeout(() => {
+					DelayLoadAd();
+				}, 1000);
+			}
+			else
+			{
+				LoadAd();
+			}
+		}
+			  
+		DelayLoadAd();
+	</script>
+   </div>
+	
+    <div class="game-content">
+        <div>
+            <h3>DESCRIPTION:</h3>
+            <p>This is a flying racing game where you dodge various obstacles along the way and try to fly as far as possible. Try to make contact with the rings for a different experience. The farther you fly, the greater the challenge. Of course, the greater the experience you gain!</p>
+        </div>
+
+        <div>
+            <h3>INSTRUCTION:</h3>
+            <p>Xtremeflying is a racing game that you can play for free. </p>
+        </div>
+
+        <div>
+            <h3>CATEGORIES:</h3>
+            <p>
+                <a href="jvascript:;" class="tag">Racing</a>
+            </p>
+        </div>
+        <div>
+            <h3>TAGS:</h3>
+            <p>
+                <a href="javascript:;" class="tag">3D</a>
+                <a href="javascript:;" class="tag">Flying Shot</a>
+            </p>
+        </div>
+		<div>
+            <h3>Version:</h3>
+            <p>
+                <a href="javascript:;" class="tag">V1.0.5</a>
+				<a href="javascript:;" class="tag">HuaWei</a>
+            </p>
+        </div>
+    </div>
+	</div>
+	
+	<div id = "game_banner">
+		
+	</div>
+	<!-- may_matchfirst_20240515_320x50
+	<ins class="adsbygoogle"
+	 id = "game_banner"
+     data-ad-client="ca-pub-8504590301958799"
+     data-ad-slot="7183129401"></ins>
+	 <script>
+		//DelayLoadAd();
+	</script>
+	 -->
+<script>
+function closeLoading() {
+  var loaderContainer = document['getElementById']('loaderContainer');
+  if (loaderContainer)
+      loaderContainer['remove']();
+}
+</script>
+	<script>
+	MyUnityInstance = null;
+	TimeId = null;
+
+	
+	function IsLoadEnd()
+	{
+		return MyUnityInstance!=undefined&&MyUnityInstance!=null;
+	}
+
+
+	function PauseGame()
+	{
+		  if(MyUnityInstance!=null)
+          {
+            MyUnityInstance.SendMessage("GameManager","PauseGame");
+          }
+	
+	}
+
+	function ResumeGame()
+	{
+		  if(MyUnityInstance!=null)
+          {
+            MyUnityInstance.SendMessage("GameManager","ResumeGame");
+          }
+		  
+		  //RefreshAnchorAD();
+	}
+	
+		
+	var IsDocumentHidden = false;
+	
+	document.addEventListener('visibilitychange', function() {
+			if (document.visibilityState === 'visible') {
+				//console.log("页面可见");
+				ResumeGame();
+				if(IsDocumentHidden)
+				{
+					let rewardType = "pause";
+					BrowseAd(rewardType,null,null,rewardType);
+				}
+				IsDocumentHidden = false;
+			} else if (document.visibilityState === 'hidden') {
+				//console.log("页面关闭")
+				PauseGame();
+				IsDocumentHidden = true;
+			}
+	});
+	
+	
+	//插页广告广告 不能有多余的参数
+	function BrowseAd(rewardName,objName,callbackName,rewardType)
+	{	
+		if(typeof ShowAD !="undefined")
+		{	
+			ShowAD(false,null);
+			return;
+		}
+		if(!navigator.onLine)return;
+		adBreak({
+			type: rewardType,                     // The type of this placement
+			name: rewardName,                     // A descriptive name for this placement
+			beforeAd: () => 
+			{
+				PauseGame();
+			},                 // Prepare for the ad. Mute and pause the game flow
+			afterAd: () => {
+   
+				ResumeGame();
+			},                  // Resume the game and re-enable sound
+			adBreakDone: (placementInfo) => {
+		
+					//console.log("adBreakDone:" + placementInfo.breakStatus);
+					//ResumeGame();
+					//alert(message);
+			}, // Always called (if provided) even if an ad didn't show
+		});
+
+	}
+	 //函数声明到前面：
+	 ///定义一个函数，防止本地报错
+	 functionShowReward = function(rewardName,objName,callbackName,rewardType)
+	 {	
+	 
+		if(!navigator.onLine)return;
+		if('pause'==rewardType)
+		{
+			rewardType = 'browse';//改变插页广告
+			BrowseAd(rewardName,objName,callbackName,rewardType);
+			return;
+		}
+		
+		if(typeof ShowAD !="undefined")
+		{	
+			ShowAD(true,callbackName);
+			return;
+		}
+		//console.error("adBreak rewardType:" + rewardType);
+		adBreak({
+			type: rewardType,                     // The type of this placement
+			name: rewardName,                     // A descriptive name for this placement
+			beforeAd: () => 
+			{
+				PauseGame();
+		
+			},                 // Prepare for the ad. Mute and pause the game flow
+			afterAd: () => {
+   
+				ResumeGame();
+			},                  // Resume the game and re-enable sound
+			beforeReward: (showAdFn) => {
+		
+				showAdFn();
+			},     // Show reward prompt (call showAdFn() if clicked)
+			adDismissed: () => {
+   
+				ResumeGame();
+			},              // Player dismissed the ad before completion
+			adViewed: () => {
+   
+				if(MyUnityInstance!=null)
+				{
+					MyUnityInstance.SendMessage(objName,callbackName);
+				}
+   
+			},                 // Ad was viewed and closed
+			adBreakDone: (placementInfo) => {
+		
+				//console.log("adBreakDone:" + placementInfo.breakStatus);
+				ResumeGame();
+				//alert(message);
+			}, // Always called (if provided) even if an ad didn't show
+		});
+			
+	 };
+	 
+	 functionPreloadAD = function()
+	{		
+			if(!navigator.onLine)return;
+			adConfig({
+				preloadAdBreaks: 'auto',  // Ad preloading strategy   'on|auto
+				sound: 'off',            // This game has sound   on|off  'on|off'    
+				onReady: () => {
+				
+					//var rewardType = 'preroll';//游戏加载前的 'preroll' 
+					//BrowseAd("OnLoadGame",null,null,rewardType);
+					
+				},   // Called when API has initialised and adBreak() is ready
+			});
+	};
+		
+    //埋点函数
+	functionAthenaSend = function(name,tip){
+		
+
+	};
+	
+	var hasCallLoadCompleted  = false;
+	functionLoadCompleted = function()
+	{	
+		if(hasCallLoadCompleted) return;
+		hasCallLoadCompleted = true;
+
+	};
+	functionPreloadAD();	
+
+
+	</script>
+	<script>
+		function GoogleTagEvent(objParems)
+		{	
+			if(!navigator.onLine)return;
+			if(dataLayer==undefined)
+			{	
+				dataLayer = window.dataLayer = {};				
+			}
+			
+			//dataLayer.push({'event':'button1-click','conversionValue':25});
+			dataLayer.push(objParems);
+		}
+	</script>
+    <script>
+		
+	// 记录游戏的加载开始的时间
+	var loadStartTime = performance.now();
+		
+	var time_fresh_top_banner  = 20000;//顶部锚定广告刷新时间 20秒
+	
+	var time_fresh_banner = 40000;//bannaer广告刷新时间 40秒
+	
+	var is_fresh_bottom_banner = false;//是否需要刷新底部广告
+	
+	var is_show_top_banner = true;//是否显示顶部广告
+	
+	///顶部锚定广告
+	var top_banner_Ad = '<ins class="adsbygoogle" id="top_banner_Ad" style="display:inline-block;width:100%;height:150px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="2212428192"></ins> ';
+	
+	//插页广告
+	var insert_Ad_1  = '<ins class="adsbygoogle" style="display:inline-block;width:100%;height:250px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="1011242765"></ins>';
+		
+	//开屏广告 也作为插页广告2来显示  
+	var insert_Ad_2  = '<ins class="adsbygoogle" style="display:inline-block;width:100%;height:250px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="6580494173"></ins>';
+	
+	
+	//激励广告
+	var award_AD_1 = '<ins class="adsbygoogle" style="display:inline-block;width:100%;height:250px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="6514635289"></ins>';
+	var award_AD_2 = '<ins class="adsbygoogle" style="display:inline-block;width:100%;height:250px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="4838591530"></ins>';
+	
+	  
+	
+	///bannaer广告
+	var bottom_banner_Ad = '<ins class="adsbygoogle" id="bottom_banner_Ad"  style="display:inline-block;width:100%;height:50px" data-ad-client="ca-pub-8504590301958799" data-ad-slot="7183129401"></ins>';
+	
+	//var google_adScene_js = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8504590301958799" crossorigin="anonymous" />';
+	
+	var google_adScene_js = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8504590301958799";
+
+	  GoogleTagEvent({'event':'loading_begin'});
+	  var app = document.querySelector("#app");
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+     // var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#loading-bar");
+	  var loadingText = document.querySelector("#loadingText");
+	  var loaderContainer = document.querySelector("#loaderContainer");
+	  
+	  	function LoadVersionPercent(index)
+		{
+			if(index>3)return;
+			setTimeout(()=>{
+				var progress = 90 + (index/4) * 10;
+				var text = progress + "%";
+				progressBarFull.style.width = text;
+				var text = progress + "%";
+				loadingText.textContent  = text;
+				LoadVersionPercent(index+1);
+			},500);
+		}
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/xtremeracing3.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/xtremeracing3.data.unityweb",
+        frameworkUrl: buildUrl + "/xtremeracing3.framework.js.unityweb",
+        codeUrl: buildUrl + "/xtremeracing3.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Boyuan_Internet",
+        productName: "Xtreme Racing",
+        productVersion: "0.1",
+        showBanner: null,
+      };
+
+      //loadingBar.style.display = "block";
+	  //canvas.style.display = "none";
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+		  //var text = 100 * progress + "%";
+		  var text = 90 * progress + "%";
+          progressBarFull.style.width = text;
+		  var num = parseFloat(90 * progress).toFixed(1);
+		  text = num + "%";
+		  loadingText.textContent  = text;
+        }).then((unityInstance) => {
+          //loadingBar.style.display = "none";
+		   //canvas.style.display = "block";
+		  
+		  MyUnityInstance = unityInstance;
+		  
+		  
+		  var script = document.createElement("script");
+		  script.src = "js/jquery.min.js";
+		  document.body.appendChild(script);
+		  
+		  
+		  script = document.createElement("script");
+		  script.src = "js/boyuanAd_4.js";
+		  document.body.appendChild(script);
+		  
+		 
+		  
+		  LoadVersionPercent(1);
+			
+		  setTimeout(() => {
+				
+				var loadEndTime = performance.now();
+				var loadTime = (loadEndTime - loadStartTime)/1000;
+				loadTime = parseFloat(loadTime).toFixed(1);
+				GoogleTagEvent({'event':'loading_end','load_time_s': loadTime});
+				
+				loadingText.textContent  = "Play";
+				progressBarFull.style.width = "100%";;
+		        loaderContainer.onclick = () => {
+						
+					closeLoading();
+					app.style.height = "100%"
+					
+					GoogleTagEvent({'event':'game_page'});
+					
+					//开始点击play时弹出广告
+					var rewardType = 'start';
+					BrowseAd("OnStart",null,null,rewardType);
+					
+					//DelayLoadAd();//刷新banner广告
+					if(Yuan_startGame!=null)
+					{
+						setTimeout(Yuan_startGame,2000);
+					}
+					
+				};
+				
+		  }, 2000);
+        }).catch((message) => {
+          //alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+	</div>
+	<!--
+	<script src="js/jquery.min.js"></script>
+	<script src="js/boyuanAd.js"></script>
+	-->
+  </body>
+</html>
